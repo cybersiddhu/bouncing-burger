@@ -1,3 +1,26 @@
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
+    game.over(false, effects.dissolve)
+})
+let gaku = sprites.create(img`
+. . . . . f f 4 4 f f . . . . . 
+. . . . f 5 4 5 5 4 5 f . . . . 
+. . . f e 4 5 5 5 5 4 e f . . . 
+. . f b 3 e 4 4 4 4 e 3 b f . . 
+. . f 3 3 3 3 3 3 3 3 3 3 f . . 
+. f 3 3 e b 3 e e 3 b e 3 3 f . 
+. f 3 3 f f e e e e f f 3 3 f . 
+. f b b f b f e e f b f b b f . 
+. f b b e 1 f 4 4 f 1 e b b f . 
+f f b b f 4 4 4 4 4 4 f b b f f 
+f b b f f f e e e e f f f b b f 
+. f e e f b d d d d b f e e f . 
+. . e 4 c d d d d d d c 4 e . . 
+. . e f b d b d b d b b f e . . 
+. . . f f 1 d 1 d 1 d f f . . . 
+. . . . . f f b b f f . . . . . 
+`, SpriteKind.Player)
+gaku.setPosition(5, 8)
+controller.moveSprite(gaku)
 let burger = sprites.create(img`
 . . . . . . . . . . . c c c c c 6 6 6 6 6 . . . . . . . . . . . 
 . . . . . . . . c c c 4 4 4 4 4 4 4 4 4 4 6 6 6 . . . . . . . . 
@@ -31,7 +54,7 @@ f 6 6 d d f f f f f e e e f f e f f e e e e e f f e e d b 4 6 e
 . . . . . . f f e b b b b b b 4 4 4 4 4 4 4 4 e e e . . . . . . 
 . . . . . . . . . f f f f f f f c c c c c e e . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
+`, SpriteKind.Enemy)
 burger.vx = 40
 burger.vy = 60
 burger.setFlag(SpriteFlag.BounceOnWall, true)
