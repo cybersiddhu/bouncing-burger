@@ -21,6 +21,7 @@ f b b f f f e e e e f f f b b f
 `, SpriteKind.Player)
 gaku.setPosition(5, 8)
 controller.moveSprite(gaku)
+gaku.setFlag(SpriteFlag.StayInScreen, true)
 let burger = sprites.create(img`
 . . . . . . . . . . . c c c c c 6 6 6 6 6 . . . . . . . . . . . 
 . . . . . . . . c c c 4 4 4 4 4 4 4 4 4 4 6 6 6 . . . . . . . . 
@@ -55,6 +56,6 @@ f 6 6 d d f f f f f e e e f f e f f e e e e e f f e e d b 4 6 e
 . . . . . . . . . f f f f f f f c c c c c e e . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
-burger.vx = 40
-burger.vy = 60
+burger.vx = 60
+burger.vy = 90
 burger.setFlag(SpriteFlag.BounceOnWall, true)
